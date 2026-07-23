@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Data & Database files
+*.db
+*.csv
+
+# Python byte code & PyCharm settings
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+
+# Model artifacts (Optional: if files are > 100MB, exclude them)
+# *.pkl
