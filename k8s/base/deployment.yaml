@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-log-analyzer
+  labels:
+    app: smart-log-analyzer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smart-log-analyzer
+  template:
+    metadata:
+      labels:
+        app: smart-log-analyzer
+    spec:
+      containers:
+        - name: smart-log-analyzer
+          image: raodyuthi6/clusterguard:latest
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          readinessProbe:
+            httpGet:
+              path: /api/summary
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /api/summary
+              port: 8000
+            initialDelaySeconds: 20
+            periodSeconds: 20

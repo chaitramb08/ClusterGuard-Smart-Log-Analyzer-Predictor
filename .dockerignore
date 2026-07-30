@@ -1,0 +1,10 @@
+.venv
+__pycache__/
+*.pyc
+.git
+.gitignore
+database/logs.db
+model/failure_model.pkl
+model/scaler.pkl
+data_analysis/window_features.csv
+data_analysis/charts/
