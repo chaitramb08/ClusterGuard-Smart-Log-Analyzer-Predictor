@@ -1,2 +1,2 @@
 # ClusterGuard-Smart-Log-Analyzer-Predictor
-Full-stack MLOps system for log-based anomaly detection and failure prediction, with a FastAPI dashboard, Dockerized deployment, and CI/CD to dev/qa/prod Kubernetes environments.
+A full-stack MLOps pipeline that ingests Android system logs via ETL, detects anomalies with an IsolationForest model, and forecasts near-term failure risk. Serves a live monitoring dashboard through a FastAPI + CRUD backend, containerized with Docker and deployed across dev/qa/prod environments on Kubernetes with CI/CD via GitHub Actions.
