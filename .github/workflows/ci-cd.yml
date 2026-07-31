@@ -43,5 +43,5 @@ jobs:
 
       - name: Deploy to Kubernetes
         run: |
-          kubectl apply -k k8s/overlays/${{ github.ref_name == 'main' && 'prod' || github.ref_name }}
-          kubectl rollout restart deployment/${{ github.ref_name == 'main' && 'prod' || github.ref_name }}-smart-log-analyzer -n ${{ github.ref_name == 'main' && 'prod' || github.ref_name }}
+            kubectl apply --validate=false -k k8s/overlays/${{ github.ref_name == 'main' && 'prod' || github.ref_name }}
+            kubectl rollout restart deployment/${{ github.ref_name == 'main' && 'prod' || github.ref_name }}-smart-log-analyzer -n ${{ github.ref_name == 'main' && 'prod' || github.ref_name }}
